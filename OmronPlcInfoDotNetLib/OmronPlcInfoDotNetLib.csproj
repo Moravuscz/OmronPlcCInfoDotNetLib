@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>Moravuscz.OmronPlcInformation</AssemblyName>
+    <Authors>Moravuscz</Authors>
+    <Company>Moravuscz</Company>
+    <Copyright>Moravuscz</Copyright>
+    <Description>A library providing various information about OMRON PLCs.</Description>
+    <FileVersion>0.0.8549.18727</FileVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <PackageId>Moravuscz.OmronPlcInformation</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>http://moravuscz.eu/projects/OmronPlcInformation</PackageProjectUrl>
+    <PackageTags>OMRON;PLC</PackageTags>
+    <Product>OMRON PLC Information Library for .NET</Product>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/Moravuscz/OmronPlcInfoDotNetLib</RepositoryUrl>
+    <RootNamespace>Moravuscz.OmronPlcInformation</RootNamespace>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <TargetFrameworks>net46;net5.0;net5.0-windows</TargetFrameworks>
+    <Version>0.0.1</Version>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net5.0-windows'">
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net46'">
+    <Reference Include="System.Xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All"/>
+  </ItemGroup>
+</Project>
