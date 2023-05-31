@@ -1,22 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <AssemblyName>Moravuscz.OmronPlcInformation</AssemblyName>
+    <AssemblyName>eu.Moravuscz.OmronPlcInformation</AssemblyName>
     <RootNamespace>Moravuscz.OmronPlcInformation</RootNamespace>
     <Authors>Moravuscz</Authors>
     <Company>Moravuscz</Company>
     <Copyright>Moravuscz</Copyright>
     <Description>A library providing various information about OMRON PLCs.</Description>
     <Product>OMRON PLC Information Library for .NET</Product>
-    <FileVersion>0.0.8550.21663</FileVersion>
+    <FileVersion>0.1.8550.21663</FileVersion>
     <TargetFrameworks>net46;net5.0;net5.0-windows</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageOutputPath>D:\develop\nuget_packages\</PackageOutputPath>
     <PackageId>Moravuscz.OmronPlcInformation</PackageId>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>http://moravuscz.eu/projects/OmronPlcInformation</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/Moravuscz/OmronPlcInfoDotNetLib</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Moravuscz/OmronPlcInfoDotNetLib.git</RepositoryUrl>
     <PackageTags>OMRON;PLC</PackageTags>
-    <Version>0.0.1</Version>
+    <Version>0.1.0</Version>
     <IncludeSymbols>true</IncludeSymbols>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
