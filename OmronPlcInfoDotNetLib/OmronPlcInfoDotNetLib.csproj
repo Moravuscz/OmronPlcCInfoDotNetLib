@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <AssemblyName>eu.Moravuscz.OmronPlcInformation</AssemblyName>
+    <AssemblyName>Moravuscz.OmronPlcInformation</AssemblyName>
     <RootNamespace>Moravuscz.OmronPlcInformation</RootNamespace>
     <Authors>Moravuscz</Authors>
     <Company>Moravuscz</Company>
