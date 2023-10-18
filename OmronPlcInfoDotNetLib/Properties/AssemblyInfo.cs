@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
  */
 
 [assembly: XmlnsPrefix("https://github.com/Moravuscz/OmronPLCCommDotNetLib", "OmrPLCInfo")]
-[assembly: XmlnsDefinition("https://github.com/Moravuscz/OmronPLCCommDotNetLib", "Moravuscz.OmronPlcInformation")]
+[assembly: XmlnsDefinition("https://github.com/Moravuscz/OmronPLCCommDotNetLib", "Moravuscz.OmronPlcInformation", AssemblyName = "Moravuscz.OmronPlcInformation")]
 #endif
 
 // Setting ComVisible to false makes the types in this assembly not visible to COM

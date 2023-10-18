@@ -5,9 +5,8 @@
     <Authors>Moravuscz</Authors>
     <Company>Moravuscz</Company>
     <Copyright>Moravuscz</Copyright>
-    <Description>A library providing various information about OMRON PLCs.</Description>
     <Product>OMRON PLC Information Library for .NET</Product>
-    <FileVersion>0.1.8550.21663</FileVersion>
+    <Description>A library providing various information about OMRON PLCs.</Description>
     <TargetFrameworks>net46;net5.0;net5.0-windows</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageOutputPath>D:\develop\nuget_packages\</PackageOutputPath>
@@ -15,22 +14,51 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>http://moravuscz.eu/projects/OmronPlcInformation</PackageProjectUrl>
     <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <RepositoryUrl>https://github.com/Moravuscz/OmronPlcInfoDotNetLib.git</RepositoryUrl>
     <PackageTags>OMRON;PLC</PackageTags>
-    <Version>0.1.0</Version>
     <IncludeSymbols>true</IncludeSymbols>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder Condition="'$(Configuration)' == 'Debug'">$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <DocumentationFile>Moravuscz.OmronPlcInformation.xml</DocumentationFile>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
   </PropertyGroup>
+
+  <!-- GitInfo-->
+  <PropertyGroup Label="GitInfo Settings">
+    <GitVersion>false</GitVersion>
+    <GitThisAssembly>true</GitThisAssembly>
+    <ThisAssemblyNamespace>System.Reflection</ThisAssemblyNamespace>
+    <GitInfoReportImportance>high</GitInfoReportImportance>
+    <IncludeSourceRevisionInInformationalVersion Condition="'$(Configuration)' == 'Release'">false</IncludeSourceRevisionInInformationalVersion>
+    <IncludeSourceRevisionInInformationalVersion Condition="'$(Configuration)' == 'Debug'">true</IncludeSourceRevisionInInformationalVersion>
+    <SourceRevisionId Condition="'$(Configuration)' == 'Debug'">debug</SourceRevisionId>
+  </PropertyGroup>
+
+  <Target Name="PopulateInfo" DependsOnTargets="GitVersion" BeforeTargets="GetAssemblyVersion;GenerateNuspec;GetPackageContents">
+    <PropertyGroup>
+      <Version>$(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch)+$(GitCommit)</Version>
+      <AssemblyVersion>$(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch)</AssemblyVersion>
+      <FileVersion>$(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch)</FileVersion>
+      <InformationalVersion>$(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch).$(GitCommits)+$(GitCommit)</InformationalVersion>
+      <PackageVersion>$(GitSemVerMajor).$(GitSemVerMinor).$(GitSemVerPatch)</PackageVersion>
+      <RepositoryBranch>$(GitBranch)</RepositoryBranch>
+      <RepositoryCommit>$(GitCommit)</RepositoryCommit>
+    </PropertyGroup>
+  </Target>
+  <!-- GitInfo -->
+
   <PropertyGroup Condition="'$(TargetFramework)' == 'net5.0-windows'">
     <UseWPF>true</UseWPF>
   </PropertyGroup>
+  
   <ItemGroup Condition="'$(TargetFramework)' == 'net46'">
     <Reference Include="System.Xaml" />
   </ItemGroup>
+  
   <ItemGroup>
+    <PackageReference Include="GitInfo" Version="3.3.3" PrivateAssets="All" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
 </Project>
